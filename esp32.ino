@@ -1,0 +1,122 @@
+#include <WiFi.h>
+#include <PubSubClient.h>
+
+// === WIFI CONFIG ===
+const char* ssid = "codewithwan";
+const char* password = "123321123";
+
+// === MQTT CONFIG ===
+// GANTI INI SETELAH TAU IP PC KAMU DARI ipconfig
+const char* mqtt_server = "192.168.137.1";  // <-- Ganti sesuai IP PC kamu
+const int mqtt_port = 1883;
+const char* mqtt_user = "uas25_ridwan";
+const char* mqtt_pass = "uas25_ridwan";
+
+// === TOPIK ===
+const char* STATUS_TOPIC = "UAS25-IOT/Status";
+const char* SUHU_TOPIC = "UAS25-IOT/33423315/SUHU";
+const char* HUM_TOPIC = "UAS25-IOT/33423315/KELEMBAPAN";
+const char* LUX_TOPIC = "UAS25-IOT/33423315/LUX";
+
+String status = "STOP";
+
+WiFiClient espClient;
+PubSubClient client(espClient);
+unsigned long lastMsg = 0;
+
+void connectToWiFi() {
+  Serial.print("[WIFI] Connecting to WiFi");
+  WiFi.begin(ssid, password);
+
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+
+  Serial.println(" Connected!");
+  Serial.print("[WIFI] ESP32 IP Address: ");
+  Serial.println(WiFi.localIP());
+
+  // Info tambahan buat bantu debug
+  Serial.println("[DEBUG] Buka CMD di PC kamu, ketik 'ipconfig'");
+  Serial.println("[DEBUG] Cari 'IPv4 Address' dari hotspot → isi itu ke mqtt_server di kode ini.");
+}
+
+void callback(char* topic, byte* payload, unsigned int length) {
+  String message;
+  for (int i = 0; i < length; i++) {
+    message += (char)payload[i];
+  }
+
+  Serial.print("[MQTT] Message arrived on topic ");
+  Serial.print(topic);
+  Serial.print(": ");
+  Serial.println(message);
+
+  if (String(topic) == STATUS_TOPIC) {
+    status = message;
+  }
+}
+
+void reconnect() {
+  while (!client.connected()) {
+    Serial.print("[MQTT] Connecting to broker...");
+    if (client.connect("ESP32Client", mqtt_user, mqtt_pass)) {
+      Serial.println(" connected!");
+      client.subscribe(STATUS_TOPIC);
+      Serial.print("[MQTT] Subscribed to: ");
+      Serial.println(STATUS_TOPIC);
+    } else {
+      Serial.print(" failed. State: ");
+      Serial.print(client.state());
+      Serial.println(" → Retry in 2s");
+      delay(2000);
+    }
+  }
+}
+
+void setup() {
+  Serial.begin(115200);
+  delay(1000);
+  connectToWiFi();
+
+  client.setServer(mqtt_server, mqtt_port);
+  client.setCallback(callback);
+}
+
+void loop() {
+  if (!client.connected()) {
+    reconnect();
+  }
+
+  client.loop();
+
+  unsigned long now = millis();
+  if (now - lastMsg > 5000) {
+    lastMsg = now;
+
+    String trimmedStatus = status;
+    trimmedStatus.trim();
+
+    if (trimmedStatus.equalsIgnoreCase("START")) {
+
+    //   TODO: GANTI DENGAN DATA YANG DIAMBIL DARI SENSOR
+      float suhu = random(250, 300) / 10.0;
+      float hum = random(600, 800) / 10.0;
+      int lux = random(100, 1000);
+
+      char suhuStr[10], humStr[10], luxStr[10];
+      dtostrf(suhu, 4, 1, suhuStr);
+      dtostrf(hum, 4, 1, humStr);
+      sprintf(luxStr, "%d", lux);
+
+      client.publish(SUHU_TOPIC, suhuStr);
+      client.publish(HUM_TOPIC, humStr);
+      client.publish(LUX_TOPIC, luxStr);
+
+      Serial.printf("[PUBLISH] SUHU=%.1f | HUM=%.1f | LUX=%d\n", suhu, hum, lux);
+    } else {
+      Serial.printf("[STATUS] %s - STOP - waiting...\n", status.c_str());
+    }
+  }
+}
