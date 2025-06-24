@@ -1,0 +1,124 @@
+1750787082: mosquitto version 2.0.21 starting
+1750787082: Config loaded from /mosquitto/config/mosquitto.conf.
+1750787082: Warning: File /mosquitto/config/passwd has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/passwd`.
+1750787082: Warning: File /mosquitto/config/acl.conf has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/acl.conf`.
+1750787082: Opening ipv4 listen socket on port 1883.
+1750787082: Opening ipv6 listen socket on port 1883.
+1750787082: mosquitto version 2.0.21 running
+1750787144: New connection from ::1:48886 on port 1883.
+1750787144: New client connected from ::1:48886 as auto-869F8C96-4FDF-C1A5-6C60-0B25C11EC36A (p2, c1, k60, u'uas25_ridwan').
+1750787144: Client auto-869F8C96-4FDF-C1A5-6C60-0B25C11EC36A disconnected.
+1750787151: New connection from ::1:51266 on port 1883.
+1750787151: New client connected from ::1:51266 as auto-1B24DD71-4954-7FB0-9709-481FA1E5D879 (p2, c1, k60, u'uas25_ridwan').
+1750787165: New connection from ::1:45146 on port 1883.
+1750787165: New client connected from ::1:45146 as auto-DABA0901-EB7B-D8AA-DDB8-08635A6D8B72 (p2, c1, k60, u'uas25_ridwan').
+1750787165: Client auto-DABA0901-EB7B-D8AA-DDB8-08635A6D8B72 disconnected.
+1750787165: Client auto-1B24DD71-4954-7FB0-9709-481FA1E5D879 disconnected.
+1750787165: New connection from ::1:45152 on port 1883.
+1750787165: New client connected from ::1:45152 as auto-8CD32514-24C6-8871-A5BE-50FBF787C8EC (p2, c1, k60, u'uas25_ridwan').
+1750787165: Client auto-8CD32514-24C6-8871-A5BE-50FBF787C8EC disconnected.
+1750787169: New connection from 172.18.0.1:47664 on port 1883.
+1750787169: New client connected from 172.18.0.1:47664 as auto-DCF39559-F90C-60BE-5FA2-846F7BD6E87E (p2, c1, k60, u'uas25_ridwan').
+1750787171: New connection from ::1:44622 on port 1883.
+1750787171: New client connected from ::1:44622 as auto-7DAF49C3-EB48-FF59-0CA8-2873C6991579 (p2, c1, k60, u'uas25_ridwan').
+1750787171: Client auto-7DAF49C3-EB48-FF59-0CA8-2873C6991579 disconnected.
+1750787172: New connection from ::1:44628 on port 1883.
+1750787172: New client connected from ::1:44628 as auto-54C4FD68-0CD8-6547-9655-036AE3EC4C51 (p2, c1, k60, u'uas25_ridwan').
+1750787172: Client auto-54C4FD68-0CD8-6547-9655-036AE3EC4C51 disconnected.
+1750787173: New connection from ::1:44634 on port 1883.
+1750787173: New client connected from ::1:44634 as auto-D8013948-754E-1C6D-1A97-676022C7A053 (p2, c1, k60, u'uas25_ridwan').
+1750787173: Client auto-D8013948-754E-1C6D-1A97-676022C7A053 disconnected.
+1750787174: New connection from ::1:44650 on port 1883.
+1750787174: New client connected from ::1:44650 as auto-9D668F49-3DB8-73E3-3BEC-F3F228293176 (p2, c1, k60, u'uas25_ridwan').
+1750787174: Client auto-9D668F49-3DB8-73E3-3BEC-F3F228293176 disconnected.
+1750787218: Client auto-DCF39559-F90C-60BE-5FA2-846F7BD6E87E disconnected.
+1750787324: mosquitto version 2.0.21 terminating
+1750787324: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1750787423: mosquitto version 2.0.21 starting
+1750787423: Config loaded from /mosquitto/config/mosquitto.conf.
+1750787423: Warning: File /mosquitto/config/passwd has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/passwd`.
+1750787423: Warning: File /mosquitto/config/acl.conf has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/acl.conf`.
+1750787423: Opening ipv4 listen socket on port 1883.
+1750787423: Opening ipv6 listen socket on port 1883.
+1750787423: mosquitto version 2.0.21 running
+1750787428: New connection from ::1:45360 on port 1883.
+1750787428: Client auto-FF8A08F7-0329-DBC9-BA30-A6121D3B0639 disconnected, not authorised.
+1750787433: New connection from ::1:33036 on port 1883.
+1750787433: Client auto-2F70BBA0-BF55-80E5-CA57-35198EEFFCF9 disconnected, not authorised.
+1750787433: New connection from 172.18.0.1:48466 on port 1883.
+1750787433: New client connected from 172.18.0.1:48466 as auto-3AE90800-6C19-6123-CAE0-BDA94C7C1950 (p2, c1, k60, u'uas25_ridwan').
+1750787434: New connection from ::1:33042 on port 1883.
+1750787434: New client connected from ::1:33042 as auto-3F1C8519-9752-81F0-33B7-FA16C94A5B33 (p2, c1, k60, u'uas25_ridwan').
+1750787434: Client auto-3F1C8519-9752-81F0-33B7-FA16C94A5B33 disconnected.
+1750787439: New connection from ::1:52364 on port 1883.
+1750787439: New client connected from ::1:52364 as auto-1F8046FB-FB72-23B9-D9E4-29EDF3EABDF8 (p2, c1, k60, u'uas25_ridwan').
+1750787439: Client auto-1F8046FB-FB72-23B9-D9E4-29EDF3EABDF8 disconnected.
+1750787463: New connection from ::1:51298 on port 1883.
+1750787463: Client auto-70088BB8-21F4-16AE-0D3D-92AE6544E69A disconnected, not authorised.
+1750787493: New connection from ::1:43948 on port 1883.
+1750787493: Client auto-2EDE84D5-9FC6-2083-E8B9-B87037FE4DFB disconnected, not authorised.
+1750787523: New connection from ::1:46240 on port 1883.
+1750787523: Client auto-BB9D9F69-9739-D534-3A7B-7336BC1BC0FD disconnected, not authorised.
+1750787553: New connection from ::1:38490 on port 1883.
+1750787553: Client auto-443EC63C-5ED5-482B-1458-EBFF76D72060 disconnected, not authorised.
+1750787583: New connection from ::1:37864 on port 1883.
+1750787583: Client auto-6149E611-4373-E5AA-34C3-CCB165525331 disconnected, not authorised.
+1750787608: mosquitto version 2.0.21 terminating
+1750787608: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1750787623: mosquitto version 2.0.21 starting
+1750787623: Config loaded from /mosquitto/config/mosquitto.conf.
+1750787623: Warning: File /mosquitto/config/passwd has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/passwd`.
+1750787623: Warning: File /mosquitto/config/acl.conf has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/acl.conf`.
+1750787623: Opening ipv4 listen socket on port 1883.
+1750787623: Opening ipv6 listen socket on port 1883.
+1750787623: mosquitto version 2.0.21 running
+1750787623: New connection from 172.18.0.1:49334 on port 1883.
+1750787623: New client connected from 172.18.0.1:49334 as auto-A6C72E6B-A47C-2F63-D795-A8BF88296A61 (p2, c1, k60, u'uas25_ridwan').
+1750787638: New connection from ::1:38456 on port 1883.
+1750787638: New client connected from ::1:38456 as auto-7AA607D7-36F3-2317-1D3A-5CCC654973B6 (p2, c1, k60, u'uas25_ridwan').
+1750787638: Client auto-7AA607D7-36F3-2317-1D3A-5CCC654973B6 disconnected.
+1750787715: New connection from ::1:49794 on port 1883.
+1750787715: New client connected from ::1:49794 as auto-CA6E21ED-4B0B-FB47-0B74-444DB52648A2 (p2, c1, k60, u'uas25_ridwan').
+1750787715: Client auto-CA6E21ED-4B0B-FB47-0B74-444DB52648A2 disconnected.
+1750787826: Client auto-A6C72E6B-A47C-2F63-D795-A8BF88296A61 disconnected.
+1750788161: New connection from 172.18.0.1:60186 on port 1883.
+1750788161: New client connected from 172.18.0.1:60186 as mqtt-explorer-8248c90c (p2, c1, k60, u'uas25_ridwan').
+1750788168: New connection from 172.18.0.1:60200 on port 1883.
+1750788168: New client connected from 172.18.0.1:60200 as nodered_bea4026f385a81e7 (p2, c1, k60, u'uas25_ridwan').
+1750788370: Client nodered_bea4026f385a81e7 disconnected.
+1750788370: New connection from 172.18.0.1:47106 on port 1883.
+1750788370: New client connected from 172.18.0.1:47106 as nodered_76932b2d3a428850 (p2, c1, k60, u'uas25_ridwan').
+1750788640: Client nodered_76932b2d3a428850 disconnected.
+1750788640: New connection from 172.18.0.1:52738 on port 1883.
+1750788640: New client connected from 172.18.0.1:52738 as nodered_e5e0d079c2be4c1f (p2, c1, k60, u'uas25_ridwan').
+1750788672: Client nodered_e5e0d079c2be4c1f disconnected.
+1750788672: New connection from 172.18.0.1:55938 on port 1883.
+1750788672: New client connected from 172.18.0.1:55938 as nodered_32e7e6a10b6d8605 (p2, c1, k60, u'uas25_ridwan').
+1750788778: New connection from 172.18.0.1:60816 on port 1883.
+1750788778: New client connected from 172.18.0.1:60816 as auto-E56E646D-1EDC-F14F-422E-B3C6FAEDD04C (p2, c1, k60, u'uas25_ridwan').
+1750788877: Client auto-E56E646D-1EDC-F14F-422E-B3C6FAEDD04C closed its connection.
+1750789064: Client nodered_32e7e6a10b6d8605 disconnected.
+1750789064: New connection from 172.18.0.1:50942 on port 1883.
+1750789064: New client connected from 172.18.0.1:50942 as nodered_1d49b72a7c05ac65 (p2, c1, k60, u'uas25_ridwan').
+1750789072: New connection from 172.18.0.1:58608 on port 1883.
+1750789072: New client connected from 172.18.0.1:58608 as auto-42EF9CC0-6514-C87A-A056-58E5DB231BE8 (p2, c1, k60, u'uas25_ridwan').
+1750789127: Client nodered_1d49b72a7c05ac65 disconnected.
+1750789127: New connection from 172.18.0.1:36142 on port 1883.
+1750789127: New client connected from 172.18.0.1:36142 as nodered_b53e94f76a49050f (p2, c1, k60, u'uas25_ridwan').
+1750789131: Client auto-42EF9CC0-6514-C87A-A056-58E5DB231BE8 disconnected.
+1750789132: New connection from 172.18.0.1:54624 on port 1883.
+1750789132: New client connected from 172.18.0.1:54624 as auto-EF6EAF0B-BA11-0375-E7E0-093A36A77F45 (p2, c1, k60, u'uas25_ridwan').
+1750789214: Client auto-EF6EAF0B-BA11-0375-E7E0-093A36A77F45 disconnected.
+1750789402: New connection from 172.18.0.1:44010 on port 1883.
+1750789402: New client connected from 172.18.0.1:44010 as auto-22CF94B6-DF46-506E-56D0-A516CF9575F6 (p2, c1, k60, u'uas25_ridwan').
+1750789424: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1750789714: Client nodered_b53e94f76a49050f disconnected.
+1750789714: New connection from 172.18.0.1:60528 on port 1883.
+1750789714: New client connected from 172.18.0.1:60528 as nodered_bbde702e45cdadd5 (p2, c1, k60, u'uas25_ridwan').
+1750789900: Client auto-22CF94B6-DF46-506E-56D0-A516CF9575F6 closed its connection.
