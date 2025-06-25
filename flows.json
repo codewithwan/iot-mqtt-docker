@@ -1,0 +1,346 @@
+[
+    {
+        "id": "f6f2187d.f17ca8",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "f1959801fc608582",
+        "type": "mqtt-broker",
+        "name": "MQTT Docker",
+        "broker": "host.docker.internal",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "3cc11d24.ff01a2",
+        "type": "comment",
+        "z": "f6f2187d.f17ca8",
+        "name": "WARNING: please check you have started this container with a volume that is mounted to /data\\n otherwise any flow changes are lost when you redeploy or upgrade the container\\n (e.g. upgrade to a more recent node-red docker image).\\n  If you are using named volumes you can ignore this warning.\\n Double click or see info side panel to learn how to start Node-RED in Docker to save your work",
+        "info": "\nTo start docker with a bind mount volume (-v option), for example:\n\n```\ndocker run -it -p 1880:1880 -v /home/user/node_red_data:/data --name mynodered nodered/node-red\n```\n\nwhere `/home/user/node_red_data` is a directory on your host machine where you want to store your flows.\n\nIf you do not do this then you can experiment and redploy flows, but if you restart or upgrade the container the flows will be disconnected and lost. \n\nThey will still exist in a hidden data volume, which can be recovered using standard docker techniques, but that is much more complex than just starting with a named volume as described above.",
+        "x": 350,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "d73d0145c3eba2ec",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "SUHU_DEBUG",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "9b7a973dfa6d5551",
+        "type": "mqtt in",
+        "z": "f6f2187d.f17ca8",
+        "name": "SUHU",
+        "topic": "UAS25-IOT/33423315/SUHU",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "f1959801fc608582",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 210,
+        "y": 380,
+        "wires": [
+            [
+                "d73d0145c3eba2ec"
+            ]
+        ]
+    },
+    {
+        "id": "91e20733c90c1321",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "HUM DEBUG",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "8ae77b8836a942ef",
+        "type": "mqtt in",
+        "z": "f6f2187d.f17ca8",
+        "name": "HUM  ",
+        "topic": "UAS25-IOT/33423315/KELEMBAPAN",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "f1959801fc608582",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 210,
+        "y": 440,
+        "wires": [
+            [
+                "91e20733c90c1321"
+            ]
+        ]
+    },
+    {
+        "id": "f979b1550128d96f",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "LUX DEBUG",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 590,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "4d2e38766f5a3546",
+        "type": "mqtt in",
+        "z": "f6f2187d.f17ca8",
+        "name": "LUX",
+        "topic": "UAS25-IOT/33423315/LUX",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "f1959801fc608582",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 210,
+        "y": 500,
+        "wires": [
+            [
+                "f979b1550128d96f"
+            ]
+        ]
+    },
+    {
+        "id": "dbaba861831e8cca",
+        "type": "mqtt in",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "topic": "UAS25-IOT/Status",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "f1959801fc608582",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 170,
+        "y": 580,
+        "wires": [
+            [
+                "0d558d35450546c8"
+            ]
+        ]
+    },
+    {
+        "id": "0d558d35450546c8",
+        "type": "switch",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "\"START\"",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "\"STOP\"",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 370,
+        "y": 580,
+        "wires": [
+            [
+                "6d0fb3944d46de76"
+            ],
+            [
+                "9a7f964445853fe5"
+            ]
+        ]
+    },
+    {
+        "id": "6d0fb3944d46de76",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "START",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "9a7f964445853fe5",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "STOP",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 570,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "eb9d303de1b6864d",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "START",
+        "payloadType": "str",
+        "x": 210,
+        "y": 680,
+        "wires": [
+            [
+                "233ebb3758afee57"
+            ]
+        ]
+    },
+    {
+        "id": "233ebb3758afee57",
+        "type": "mqtt out",
+        "z": "f6f2187d.f17ca8",
+        "name": "STATUS START",
+        "topic": "UAS25-IOT/Status",
+        "qos": "2",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "f1959801fc608582",
+        "x": 600,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "b89bce13e69a9ccb",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "STOP",
+        "payloadType": "str",
+        "x": 210,
+        "y": 740,
+        "wires": [
+            [
+                "f848ba4608902cc8"
+            ]
+        ]
+    },
+    {
+        "id": "f848ba4608902cc8",
+        "type": "mqtt out",
+        "z": "f6f2187d.f17ca8",
+        "name": "STATUS STOP",
+        "topic": "UAS25-IOT/Status",
+        "qos": "2",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "f1959801fc608582",
+        "x": 600,
+        "y": 740,
+        "wires": []
+    }
+]
